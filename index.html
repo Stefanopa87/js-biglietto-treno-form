@@ -35,7 +35,7 @@
       console.log('euro: ' + tktPrice)
 
       // costo biglietto tra i 18 e i 65
-      if (etaNumber > 18 < 65){
+      if (etaNumber > 18 && etaNumber < 65){
         var totaleNoSconto = tktPrice;
         console.log('il tuo totale biglietto senza sconto applicato è di: ' + totaleNoSconto + ' Euro')
         document.getElementById('risultato').innerHTML= "IL TUO COSTO: " + totaleNoSconto + " EURO";
