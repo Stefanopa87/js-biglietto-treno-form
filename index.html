@@ -11,6 +11,7 @@
     h1{
       text-align: center;
       color: blue;
+      margin-top: 200px;
     }
     </style>
   </head>
@@ -19,24 +20,40 @@
 
 
     <script type="text/javascript">
+
       // domande
       var km = prompt('inserisci i km che vuoi percorrere');
       var kmNumber = parseInt(km);
+      console.log('km '+ kmNumber)
 
       var eta = prompt('inserisci la tua età')
       var etaNumber = parseInt(eta);
-
-      console.log('km '+ kmNumber, 'età ' + etaNumber)
+      console.log('età ' + etaNumber)
 
       // costo biglietto 0,21*km
       var tktPrice = (kmNumber * 0.21);
-
       console.log('euro: ' + tktPrice)
 
+      // costo biglietto tra i 18 e i 65
+      if (etaNumber > 18 < 65){
+        var totaleNoSconto = tktPrice;
+        console.log('il tuo totale biglietto senza sconto applicato è di: ' + totaleNoSconto + ' Euro')
+        document.getElementById('risultato').innerHTML= "IL TUO COSTO: " + totaleNoSconto + " EURO";
+      }
 
+      // costo biglietto under 18
+      if (etaNumber < 18){
+        var totaleUnder18 = tktPrice / 100 * 80;
+        console.log('il tuo totale biglietto con lo sconto del 20% è di: ' + totaleUnder18 + ' Euro')
+        document.getElementById('risultato').innerHTML= "IL TUO COSTO CON LO SCONTO DEL 20%: " + totaleUnder18 + " EURO";
+      }
 
-
-
+      // costo biglietto over 65
+      if (etaNumber > 65){
+        var totaleOver65 = tktPrice / 100 * 60;
+        console.log('il tuo totale biglietto con lo sconto del 40% è di: ' + totaleOver65 + ' Euro')
+        document.getElementById('risultato').innerHTML= "IL TUO COSTO CON LO SCONTO DEL 40%: " + totaleOver65 + " EURO";
+      }
 
     </script>
   </body>
